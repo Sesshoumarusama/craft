@@ -1,0 +1,22 @@
+[
+  {
+    "code": "001",
+    "name": "iPad",
+    "price": "3400.00"
+  },
+  {
+    "code": "002",
+    "name": "iPhone",
+    "price": "5400.00"
+  },
+  {
+    "code": "003",
+    "name": "iPod",
+    "price": "1500.00"
+  },
+  {
+    "code": "004",
+    "name": "iTounch",
+    "price": "1000.00"
+  }
+]

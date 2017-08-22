@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.craft.rms.modules.sys.dao.UserDao">
+  <resultMap id="BaseResultMap" type="sysUsers">
+    <!--
+      WARNING - @author pengpei
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_login_name" jdbcType="VARCHAR" property="userLoginName" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+    <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+    <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+    <result column="user_token" jdbcType="VARCHAR" property="userToken" />
+    <result column="user_type_cd" jdbcType="CHAR" property="userTypeCd" />
+    <result column="user_status_cd" jdbcType="CHAR" property="userStatusCd" />
+    <result column="creat_id" jdbcType="INTEGER" property="creatId" />
+    <result column="creat_dt" jdbcType="TIMESTAMP" property="creatDt" />
+    <result column="modify_id" jdbcType="INTEGER" property="modifyId" />
+    <result column="modify_dt" jdbcType="TIMESTAMP" property="modifyDt" />
+    <result column="valid_dt" jdbcType="TIMESTAMP" property="validDt" />
+    <result column="user_manager" jdbcType="CHAR" property="userManager" />
+    <result column="comments" jdbcType="VARCHAR" property="comments" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @author pengpei
+    -->
+    user_id, user_name, user_login_name, user_password, user_phone, user_email, user_token, 
+    user_type_cd, user_status_cd, creat_id, creat_dt, modify_id, modify_dt, valid_dt, 
+    user_manager, comments
+  </sql>
+
+  <select id="getByUserNameAndPassword" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List"/>
+    FROM sys_users
+    WHERE user_name = #{userName} AND user_password = #{password}
+  </select>
+
+  <select id="selectByCondition" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from sys_users
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @author pengpei
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from sys_users
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @author pengpei
+    -->
+    delete from sys_users
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert">
+    <!--
+      WARNING - @author pengpei
+    -->
+    insert into sys_users (user_id, user_name, user_login_name, 
+      user_password, user_phone, user_email, 
+      user_token, user_type_cd, user_status_cd, 
+      creat_id, creat_dt, modify_id, 
+      modify_dt, valid_dt, user_manager, 
+      comments)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userLoginName,jdbcType=VARCHAR}, 
+      #{userPassword,jdbcType=VARCHAR}, #{userPhone,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
+      #{userToken,jdbcType=VARCHAR}, #{userTypeCd,jdbcType=CHAR}, #{userStatusCd,jdbcType=CHAR}, 
+      #{creatId,jdbcType=INTEGER}, #{creatDt,jdbcType=TIMESTAMP}, #{modifyId,jdbcType=INTEGER}, 
+      #{modifyDt,jdbcType=TIMESTAMP}, #{validDt,jdbcType=TIMESTAMP}, #{userManager,jdbcType=CHAR}, 
+      #{comments,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective">
+    <!--
+      WARNING - @author pengpei
+    -->
+    insert into sys_users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userLoginName != null">
+        user_login_name,
+      </if>
+      <if test="userPassword != null">
+        user_password,
+      </if>
+      <if test="userPhone != null">
+        user_phone,
+      </if>
+      <if test="userEmail != null">
+        user_email,
+      </if>
+      <if test="userToken != null">
+        user_token,
+      </if>
+      <if test="userTypeCd != null">
+        user_type_cd,
+      </if>
+      <if test="userStatusCd != null">
+        user_status_cd,
+      </if>
+      <if test="creatId != null">
+        creat_id,
+      </if>
+      <if test="creatDt != null">
+        creat_dt,
+      </if>
+      <if test="modifyId != null">
+        modify_id,
+      </if>
+      <if test="modifyDt != null">
+        modify_dt,
+      </if>
+      <if test="validDt != null">
+        valid_dt,
+      </if>
+      <if test="userManager != null">
+        user_manager,
+      </if>
+      <if test="comments != null">
+        comments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userLoginName != null">
+        #{userLoginName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userToken != null">
+        #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="userTypeCd != null">
+        #{userTypeCd,jdbcType=CHAR},
+      </if>
+      <if test="userStatusCd != null">
+        #{userStatusCd,jdbcType=CHAR},
+      </if>
+      <if test="creatId != null">
+        #{creatId,jdbcType=INTEGER},
+      </if>
+      <if test="creatDt != null">
+        #{creatDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyId != null">
+        #{modifyId,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDt != null">
+        #{modifyDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validDt != null">
+        #{validDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userManager != null">
+        #{userManager,jdbcType=CHAR},
+      </if>
+      <if test="comments != null">
+        #{comments,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective">
+    <!--
+      WARNING - @author pengpei
+    -->
+    update sys_users
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userLoginName != null">
+        user_login_name = #{userLoginName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        user_password = #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhone != null">
+        user_phone = #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null">
+        user_email = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userToken != null">
+        user_token = #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="userTypeCd != null">
+        user_type_cd = #{userTypeCd,jdbcType=CHAR},
+      </if>
+      <if test="userStatusCd != null">
+        user_status_cd = #{userStatusCd,jdbcType=CHAR},
+      </if>
+      <if test="creatId != null">
+        creat_id = #{creatId,jdbcType=INTEGER},
+      </if>
+      <if test="creatDt != null">
+        creat_dt = #{creatDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyId != null">
+        modify_id = #{modifyId,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDt != null">
+        modify_dt = #{modifyDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validDt != null">
+        valid_dt = #{validDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userManager != null">
+        user_manager = #{userManager,jdbcType=CHAR},
+      </if>
+      <if test="comments != null">
+        comments = #{comments,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+
+</mapper>

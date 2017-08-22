@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="static/head :: commom_header(~{::title}, ~{::link})">
+    <title th>你好中国</title>
+    <link rel="stylesheet" href="../../static/app/css/uniform.css" th:href="@{/static/app/css/uniform.css}"/>
+</head>
+<body>
+<div id="background"></div>
+<div class="container login-form">
+    <div class="row">
+        <div class="col-lg-12">
+        	<div id="loginbox">
+        		<form>
+                <div class="form-group">
+                    <label for="username">登录账号</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="请输入账号..."/>
+                </div>
+                <div class="form-group">
+                    <label for="password">登录密码</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="请输入密码..."/>
+                </div>
+                <button  onclick="login()" class="btn btn-primary col-lg-12">登录</button>
+            </form>
+        	</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function login() {
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+		if(!hasText(username)){
+			return;
+		}
+        
+        if(!hasText(password)){
+        	return;
+        }
+        
+		$.post('http://localhost:8080/sys/login', {username : username, password: password}, function(data){
+			
+		}, 'json')
+		
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head th:fragment="commom_header(title, links)">
+    <title th:replace="${title}">主页</title>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"  th:href="@{/static/bootstrap/css/bootstrap.min.css}"/>
+    <th:block th:replace="${links}"/>
+    <script type="text/javascript" src="../../static/jquery/jquery-3.1.0.min.js" th:src="@{/static/jquery/jquery-3.1.0.min.js}"></script>
+    <script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js" th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="../../static/app/js/uniform.js" th:src="@{/app/js/uniform.js}"></script>
+</head>

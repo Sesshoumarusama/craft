@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="name" value="${name}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="driverClassName" value="${jdbc.driverClass}"/>
+        <!--<property name = "filters" value = "${filters}"/>-->
+        <!-- 最大并发连接数 -->
+        <property name = "maxActive" value = "${pool.maxActive}"/>
+        <!-- 初始化连接数量 -->
+        <property name = "initialSize" value = "${pool.initialSize}"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name = "maxWait" value = "${pool.maxWait}"/>
+        <!-- 最小空闲连接数 -->
+        <property name = "minIdle" value = "${pool.minIdle}"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name = "timeBetweenEvictionRunsMillis" value ="${pool.timeBetweenEvictionRunsMillis}"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name = "minEvictableIdleTimeMillis" value ="${pool.minEvictableIdleTimeMillis}"/>
+        <property name = "validationQuery" value = "${pool.validationQuery}"/>
+        <property name = "testWhileIdle" value = "${pool.testWhileIdle}"/>
+        <property name = "testOnBorrow" value = "${pool.testOnBorrow}"/>
+        <property name = "testOnReturn" value = "${pool.testOnReturn}"/>
+        <property name="poolPreparedStatements" value="${pool.poolPreparedStatements}"/>
+        <property name = "maxOpenPreparedStatements" value ="${pool.maxOpenPreparedStatements}"/>
+        <!-- 打开 removeAbandoned 功能 -->
+        <!--<property name = "removeAbandoned" value = ""/>-->
+        <!-- 1800 秒，也就是 30 分钟 -->
+        <!--<property name = "removeAbandonedTimeout" value ="${removeAbandonedTimeout}"/>-->
+        <!-- 关闭 abanded 连接时输出错误日志 -->
+        <!--<property name = "logAbandoned" value = "${logAbandoned}"/>-->
+    </bean>
+
+
+
+    <!--<bean id="jndi" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="java:comp/env/jdbc/rms"/>
+    </bean>-->
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mappings/**/*.xml"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.craft.rms.modules"/>
+    </bean>-->
+</beans>
