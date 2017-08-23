@@ -8,3 +8,7 @@ String basePath = request.getScheme() + "://"
 + path;
 %>
 
+<script>
+    var contextPath = '<%=basePath%>';
+</script>
+

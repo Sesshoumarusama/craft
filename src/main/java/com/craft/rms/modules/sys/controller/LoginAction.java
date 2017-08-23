@@ -24,6 +24,8 @@ public class LoginAction extends BaseAction{
     @Resource
     private UserService userService;
 
+    private int maxInactiveInterval = 1800;
+
     @RequestMapping("login")
     @ResponseBody
     public AjaxReturnInfo login(@RequestParam("userName") String userName,
@@ -36,12 +38,12 @@ public class LoginAction extends BaseAction{
         HttpSession session = request.getSession();
         session.setAttribute(SESSION_USER, user);
         session.setAttribute(USERNAME, user.getUserName());
+        session.setMaxInactiveInterval(maxInactiveInterval);//设置session超时为30分钟，单位是秒
         return AjaxReturnInfo.opratedResult(SUCCESS, "登录");
     }
 
-    @RequestMapping("index")
+    @RequestMapping("login/index")
     public String index(){
-        System.out.println("进来了");
         return "login";
     }
 

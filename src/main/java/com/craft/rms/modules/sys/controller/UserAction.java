@@ -23,7 +23,6 @@ public class UserAction implements ResultStatus{
 
     @RequestMapping("index")
     public String user(HttpServletRequest request){
-        request.getSession().invalidate();
         return "sys/user";
     }
 

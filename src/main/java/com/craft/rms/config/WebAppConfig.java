@@ -29,5 +29,7 @@ public class WebAppConfig implements WebApplicationInitializer {
         ExceptionFilter exceptionFilter = new ExceptionFilter();
         FilterRegistration.Dynamic filter1 = servletContext.addFilter("exceptionFilter", exceptionFilter);
         filter1.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");  // 配置过滤器的类型和拦截的路径
+
+
     }
 }

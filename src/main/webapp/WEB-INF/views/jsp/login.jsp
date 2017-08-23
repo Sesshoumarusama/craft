@@ -26,12 +26,12 @@
             <li>
                 <p class="leftp">登录账号</p>
                 <p class="logerror" id="account_p"></p>
-                <input type="text" placeholder="请输入账号..." id="login_name"/>
+                <input type="text" value="rms" placeholder="请输入账号..." id="login_name"/>
             </li>
             <li>
                 <p class="leftp">登录密码</p>
                 <p class="logerror" id="password_p"></p>
-                <input type="password" placeholder="请输入密码..." id="login_pwd" class="logpwd"/>
+                <input type="password" value="craft" placeholder="请输入密码..." id="login_pwd" class="logpwd"/>
             </li>
             <li class="ppbtn">
                 <a id="login_in">登录</a>

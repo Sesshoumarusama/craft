@@ -138,6 +138,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         super.addInterceptors(registry);
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/sys/index", "/sys/login");
+        //配置登录session验证的拦截器
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/sys/login/index", "/sys/login");
     }
 }
