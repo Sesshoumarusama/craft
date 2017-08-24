@@ -1,5 +1,6 @@
 package com.craft.rms.modules.sys.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  * This class corresponds to the database table sys_users
  * @author pengpei
  */
-public class SysUsers {
+public class SysUsers implements Serializable{
     /**
      * Database Column Remarks:
      *   用户的id

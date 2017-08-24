@@ -48,7 +48,6 @@ public class LoginAction extends BaseAction{
     }
 
 
-
     @RequestMapping("hello")
     public String hello(String message) {
         System.out.println("message=" + message);

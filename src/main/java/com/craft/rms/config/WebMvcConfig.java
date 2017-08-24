@@ -141,4 +141,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
         //配置登录session验证的拦截器
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/sys/login/index", "/sys/login");
     }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        super.addViewControllers(registry);
+//        registry.addViewController("/").setViewName("forward:/login");
+    }
 }

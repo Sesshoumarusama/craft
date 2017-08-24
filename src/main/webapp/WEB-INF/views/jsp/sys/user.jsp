@@ -19,10 +19,6 @@
             width: 100px;
             text-align: right;
         }
-
-
-
-
     </style>
 </head>
 <body class="easyui-layout" data-options="fit:true,border:false">

@@ -57,6 +57,7 @@
         <property name="basePackage" value="com.craft.rms.modules"/>
     </bean>-->
 
+    <!--配置声明式事务-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="get*" propagation="REQUIRED" read-only="true" />
@@ -66,6 +67,7 @@
         </tx:attributes>
     </tx:advice>
 
+    <!--使用aspectj处理代理-->
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 
     <!-- 被拦截类配置-->

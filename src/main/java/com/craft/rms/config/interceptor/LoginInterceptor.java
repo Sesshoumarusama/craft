@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
 
 /**
+ * 登录验证的拦截器
  * Created by pengpei on 2017/8/22.
  */
 public class LoginInterceptor implements HandlerInterceptor {
