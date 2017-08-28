@@ -4,9 +4,9 @@
 <html>
 <head>
     <title>RMS登录</title>
-    <link rel="stylesheet" href="<%=basePath%>/static/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<%=basePath%>/static/app/css/unicorn.grey.css" />
-    <link rel="stylesheet" href="<%=basePath%>/static/app/css/unicorn.login.css"/>
+    <link rel="stylesheet" href="${ctx}/static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${ctx}/static/app/css/unicorn.grey.css" />
+    <link rel="stylesheet" href="${ctx}/static/app/css/unicorn.login.css"/>
 </head>
 <body>
 <div id="background">
@@ -40,9 +40,9 @@
         </ul>
     </div>
 </div>
-<script src="<%=basePath%>/static/jquery/jquery-3.1.0.min.js"></script>
-<script src="<%=basePath%>/static/bootstrap/js/bootstrap.min.js"></script>
-<script src="<%=basePath%>/static/app/js/unicorn.login.js"></script>
+<script src="${ctx}/static/jquery/jquery-3.1.0.min.js"></script>
+<script src="${ctx}/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="${ctx}/static/app/js/unicorn.login.js"></script>
 <script>
     $(function(){
         //提交事件
@@ -77,12 +77,12 @@
 
         }
         if(check){
-            $.post('<%=basePath%>/sys/login', {
+            $.post('${ctx}/sys/login', {
                 userName: uname,
                 password: password
             }, function (data) {
                 if(data['success'] === 'true'){
-                    window.location.href="<%=basePath%>/sys/user/index";
+                    window.location.href="${ctx}/sys/user/index";
                 }else {
                     $('#login_p').html(data['message']);
                 }

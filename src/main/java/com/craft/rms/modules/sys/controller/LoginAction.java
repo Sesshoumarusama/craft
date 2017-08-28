@@ -38,6 +38,7 @@ public class LoginAction extends BaseAction{
         HttpSession session = request.getSession();
         session.setAttribute(SESSION_USER, user);
         session.setAttribute(USERNAME, user.getUserName());
+        session.setAttribute(USERID, user.getUserId());
         session.setMaxInactiveInterval(maxInactiveInterval);//设置session超时为30分钟，单位是秒
         return AjaxReturnInfo.opratedResult(SUCCESS, "登录");
     }

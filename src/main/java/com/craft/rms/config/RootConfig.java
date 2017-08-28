@@ -16,7 +16,8 @@ import java.util.Properties;
 @Configuration
 @Import(value = {MyBtaisConfig.class})
 @ComponentScan(basePackages = "com.craft.rms",
-        excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = Controller.class)})
+        excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = Controller.class),
+                          @ComponentScan.Filter(type =  FilterType.ANNOTATION, value = Configuration.class)})
 public class RootConfig {
 
     /**

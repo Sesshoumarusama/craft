@@ -1,5 +1,6 @@
 package com.craft.rms.config;
 
+import com.craft.rms.config.websocket.WebSocketConfig;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

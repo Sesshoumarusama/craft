@@ -2,16 +2,15 @@ package com.craft.rms.config;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.craft.rms.config.interceptor.LoginInterceptor;
+import com.craft.rms.config.websocket.WebSocketConfig;
 import com.google.common.collect.Lists;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.*;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.socket.sockjs.frame.SockJsMessageCodec;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -25,6 +24,7 @@ import java.util.List;
  */
 @Configuration     //标注为被spring识别的配置类
 @EnableWebMvc      //启用springMVC注解
+@Import(value = {WebSocketConfig.class})
 @ComponentScan(basePackages = "com.craft.rms",
         includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = Controller.class)},
         useDefaultFilters = false)

@@ -1,0 +1,76 @@
+/*
+  Easyui Of Insdep Theme 2.x 上传
+  版本：2.0.0
+  手册：https://www.insdep.com/2.x
+*/
+
+
+.batch-upload{ clear: both; position: relative; }
+.batch-upload,.batch-upload .upload-list{ width: auto; height: auto; overflow: auto; }
+.batch-upload .upload-operate{ float: left; width: 290px; margin: 0 15px 0 0;}
+.batch-upload .upload-list{ margin: 20px 0 30px 305px; }
+
+.batch-upload .upload-operate .upload-dragged{ width: 250px; height: 250px; margin: 20px auto; background-color: #fafafa;border:2px dashed #dddddd; border-radius: 5px; }
+.batch-upload .upload-operate .upload-dragged b{ width: 100%; display: block; background: url(images/upload-icon.png) top center no-repeat; padding: 38px 0 0 0; text-align: center; font-weight: normal; color: #9a9a9a; margin: 100px 0 0; }
+.batch-upload .upload-operate .upload-button,.batch-upload .upload-operate .upload-button input{ width: 140px; height: 34px; }
+.batch-upload .upload-operate .upload-button{ line-height: 34px; text-align: center; margin: 0 auto; background-color: #64ab25; color: #fff; border-radius: 3px; position: relative;}
+.batch-upload .upload-operate .upload-button input{position: absolute; top: 0; right: 0; bottom: 0; left: 0; filter:alpha(opacity=0);-moz-opacity:0;opacity:0;}
+
+.batch-upload .upload-list p{ font-weight: bold; margin: 0 0 30px ;}
+.batch-upload .upload-list .upload-scroll{ height:240px; overflow-y:auto; clear:both;}
+.batch-upload .upload-list dl{ position: relative; border-bottom: 1px solid #dddddd; margin: 0 15px 10px 0; padding: 0 0 0 50px;}
+.batch-upload .upload-list dl dd{ padding: 15px 0;}
+.batch-upload .upload-list dl dd .progressbar-text{ width: 100% !important; }
+
+.batch-upload .upload-list dl dd .easyui-progressbar,.batch-upload .upload-list dl dd .progressbar-text,.batch-upload .upload-list dl dd .progressbar-value{ height: 5px !important; line-height: 5px !important; }
+
+.batch-upload .upload-list dl dt .upload-cancel{ width: 15px; height:15px; display: block; float: right; cursor: pointer; background-image: url(images/cancel_icons.png) ; background-repeat: no-repeat; background-position: right center; }
+.batch-upload .upload-list dl dt span{ padding: 0 0 0 10px; color: #a3a3a3; }
+
+.batch-upload .upload-list .upload-files-success:before,.batch-upload .upload-list .upload-files-error:before
+{content:""; width: 16px; height: 16px; position:absolute; top: 20px; left:20px;}
+.batch-upload .upload-list .upload-files-success:before{ background:url(images/prompt_03.png) center center no-repeat;}
+.batch-upload .upload-list .upload-files-error:before{ background:url(images/prompt_02.png) center center no-repeat;}
+
+.batch-upload .upload-list .file-icon-ai,
+.batch-upload .upload-list .file-icon-download,
+.batch-upload .upload-list .file-icon-excel,
+.batch-upload .upload-list .file-icon-folder,
+.batch-upload .upload-list .file-icon-gif,
+.batch-upload .upload-list .file-icon-html,
+.batch-upload .upload-list .file-icon-jpg,
+.batch-upload .upload-list .file-icon-mp3,
+.batch-upload .upload-list .file-icon-pdf,
+.batch-upload .upload-list .file-icon-ppt,
+.batch-upload .upload-list .file-icon-psd,
+.batch-upload .upload-list .file-icon-txt,
+.batch-upload .upload-list .file-icon-upload,
+.batch-upload .upload-list .file-icon-video,
+.batch-upload .upload-list .file-icon-white,
+.batch-upload .upload-list .file-icon-word,
+.batch-upload .upload-list .file-icon-zip
+{ background-position: 0 top; background-repeat: no-repeat; background-size: 10%; }
+.batch-upload .upload-list .file-icon-ai{ background-image: url(images/file/ai.png); }
+.batch-upload .upload-list .file-icon-download{ background-image: url(images/file/download.png); }
+.batch-upload .upload-list .file-icon-excel{ background-image: url(images/file/excel.png); }
+.batch-upload .upload-list .file-icon-folder{ background-image: url(images/file/folder.png); }
+.batch-upload .upload-list .file-icon-gif{ background-image: url(images/file/gif.png); }
+.batch-upload .upload-list .file-icon-html{ background-image: url(images/file/html.png); }
+.batch-upload .upload-list .file-icon-jpg{ background-image: url(images/file/jpg.png); }
+.batch-upload .upload-list .file-icon-mp3{ background-image: url(images/file/mp3.png); }
+.batch-upload .upload-list .file-icon-pdf{ background-image: url(images/file/pdf.png); }
+.batch-upload .upload-list .file-icon-ppt{ background-image: url(images/file/ppt.png); }
+.batch-upload .upload-list .file-icon-psd{ background-image: url(images/file/psd.png); }
+.batch-upload .upload-list .file-icon-txt{ background-image: url(images/file/txt.png); }
+.batch-upload .upload-list .file-icon-upload{ background-image: url(images/file/upload.png); }
+.batch-upload .upload-list .file-icon-video{ background-image: url(images/file/video.png); }
+.batch-upload .upload-list .file-icon-white{ background-image: url(images/file/white.png); }
+.batch-upload .upload-list .file-icon-word{ background-image: url(images/file/word.png); }
+.batch-upload .upload-list .file-icon-zip{ background-image: url(images/file/zip.png); }
+
+.batch-upload-images .upload-list dl dd{ padding: 5px 0;}
+.batch-upload-images .upload-list dl dd .easyui-progressbar,.batch-upload-images .upload-list dl dd .progressbar-text,.batch-upload-images .upload-list dl dd .progressbar-value{ height: 10px !important; line-height: 10px !important; }
+.batch-upload-images .upload-list dl img{ width: 160px; height: 120px; border-radius: 5px; }
+.batch-upload-images .upload-list dl{ width: 160px; border-bottom:none; margin: 0 20px 20px 0; padding: 0; float: left;}
+.batch-upload-images .upload-list .upload-files-success:before,.batch-upload-images .upload-list .upload-files-error:before
+{top: 100px;left: 140px;}

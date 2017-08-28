@@ -22,6 +22,9 @@
     </style>
 </head>
 <body class="easyui-layout" data-options="fit:true,border:false">
+    <div data-options="region:'west'" style="width: 200px;">
+        <a class="easyui-linkbutton" href="${ctx}/sys/chat/chatRoom">聊天室</a>
+    </div>
     <div data-options="region:'center'" style="background:#eee;">
         <table id="user-dg"></table>
     </div>
@@ -62,7 +65,7 @@ $(function () {
 
 function loadUserInfos() {
     $('#user-dg').datagrid({
-        url: '<%=basePath%>/sys/user/listUserInfos',
+        url: '${ctx}/sys/user/listUserInfos',
         fitColumns: false,
         striped: true,
         fit: true,
@@ -84,7 +87,7 @@ function loadUserInfos() {
                 handler: function () {
                     openUserInfodialog('s')
                 }
-            },
+            },'-',
             {
                 text: '删除用户',
                 iconCls: 'icon-remove',
@@ -102,7 +105,7 @@ function deleteUser() {
         return;
     }
     var userId = userRow.userId;
-    $.post('<%=basePath%>/sys/user/deleteUser', {userId: userId}, function (data) {
+    $.post('${ctx}/sys/user/deleteUser', {userId: userId}, function (data) {
         parseAjaxReturnInfo(data, function () {
             var index = $('#user-dg').datagrid('getRowIndex');
             $('#user-dg').datagrid('deleteRow', index);
@@ -154,7 +157,7 @@ function openUserInfodialog(type) {
 
 function saveUser(type) {
     if('s' === type){
-        $.post('<%=basePath%>/sys/user/addUser', $('#user-form').serialize(), function (data) {
+        $.post('${ctx}/sys/user/addUser', $('#user-form').serialize(), function (data) {
             parseAjaxReturnInfo(data, function () {
                 $('#user-dg').datagrid('reload');
                 closeWindow($('#user-dg'));

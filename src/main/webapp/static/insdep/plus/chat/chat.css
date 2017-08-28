@@ -1,0 +1,81 @@
+/*
+  Easyui Of Insdep Theme 2.x èŠå¤©åˆ—è¡¨
+  https://www.insdep.com/
+*/
+.chatlist{ width: 100%; }
+.chatlist,.chatlist dl{ height: auto; overflow:auto; clear: both; position: relative; }
+.chatlist dl{ padding: 0 0 0 60px; margin: 0 0 15px; }
+.chatlist dl img,.chatlist dl dt,.chatlist dl dd{ float: left; }
+.chatlist dl img{ width: 42px; height: 42px; border-radius: 50px; margin: 0 0 10px -60px; }
+.chatlist dl dt{ margin: 0 0 5px; display: block; width: 100%; }
+
+.chatlist dl dd{ line-height: 20px; padding: 10px; border-radius:5px; background-color: #fafafa; border: 1px solid #dcdcdc; position: relative;}
+
+.chatlist dl dd:before,.chatlist dl dd:after{width:0px;height:0px;border:transparent solid;position:absolute;content:""}
+.chatlist dl dd:before{border-width:7px;border-right-color: #c3c3c3;top:13px;left:-14px;}
+.chatlist dl dd:after{border-width:6px;border-right-color: #fafafa;top:14px;left:-12px;}
+
+.chatlist dl dt+dd:before{top:5px;}
+.chatlist dl dt+dd:after{top:6px;}
+
+.chatlist-time,.chatlist-prompt{ text-align: center; color: #a4a4a4; margin: 20px 0; }
+.chatlist-time span,.chatlist-prompt span{ background-color: #e3e8ed; color: #777777; padding:5px 10px; border-radius:5px;}
+
+.chatlist-prompt-success,.chatlist-prompt-error,.chatlist-prompt-info{ padding: 5px 10px 5px 25px !important;}
+.chatlist-prompt-success{ background: url(images/prompt_03.png) no-repeat 5px 5px;}
+.chatlist-prompt-error{ background: url(images/prompt_02.png) no-repeat 5px 5px;}
+.chatlist-prompt-info{ background: url(images/prompt_01.png) no-repeat 5px 5px;}
+
+
+.chatlist .call{ padding: 0 60px 0 0;}
+.chatlist .call dt,.chatlist .call dd,.chatlist .call img{ float: right;}
+.chatlist .call dt{text-align: right;}
+.chatlist .call img{ margin: 0 -60px 10px 0; }
+.chatlist .call dd{ background-color:#007ddc;border:none; color: #fff;}
+.chatlist .call dd:before,.chatlist .call dd:after{width:0px;height:0px;border:transparent solid;position:absolute;content:"";}
+.chatlist .call dd:before{border-width:7px;border-left-color: #007ddc;top:13px;left:auto; right: -14px;}
+.chatlist .call dd:after{border-width:6px;border-left-color: #007ddc;top:14px;left:auto; right: -12px;}
+
+.chatlist .call dt+dd:before{top:7px;}
+.chatlist .call dt+dd:after{top:8px;}
+
+
+.chatlist .share,.chatlist .files{ position: relative; clear: both; overflow: auto; height: auto; width: auto; max-width:460px; }
+.chatlist .share .share-content img,.chatlist .files .files-content .files-icons{ margin: 0 10px 0 0; width: 90px; height: 60px; border-radius: 3px;}
+.chatlist .share .share-content b,.chatlist .share .share-content p,
+.chatlist .files .files-content b,.chatlist .files .files-content p
+{line-height: 16px; }
+.chatlist .share .share-content b,.chatlist .files .files-content b
+{ padding:5px 0; display: block; }
+.chatlist .share .share-content p,.chatlist .files .files-content p
+{ color:#969696; }
+.chatlist .call .share .share-content img{ float: left;} 
+
+.chatlist .share .share-operate,.chatlist .files .files-operate  { border-top: 1px solid #e9e9e9; padding: 8px 0 0; margin: 10px 0 0; }
+.chatlist .share .share-operate a,.chatlist .files .files-operate a{ padding: 0 0 0 10px; }
+.chatlist .share .share-operate,.chatlist .files .files-operate { text-align: right; }
+
+.chatlist .call .share .share-content b,.chatlist .call .share .share-operate a,
+.chatlist .call .files .files-content b,.chatlist .call .files .files-operate a
+{ color: #fff;}
+.chatlist .call .share .share-content p,
+.chatlist .call .files .files-content p
+{ color: #72bdf5; }
+.chatlist .call .share .share-operate,
+.chatlist .call .files .files-operate
+{ border-top: 1px solid #3091db; }
+
+
+.chatlist .files .files-content b span{color: #969696; font-weight: normal; padding: 0 0 0 10px;}
+.chatlist .call .files .files-content b span{color: #72bdf5;}
+.chatlist .files .files-content p{ overflow:hidden;white-space:nowrap;text-overflow:ellipsis; }
+
+.chatlist .files .files-content .files-icons{ width: 48px; height: 48px;/* background-color: #f8b466; */float: left; position: relative;}
+.chatlist .files .files-content .files-icons:before{position:absolute;content:""; bottom: -3px; right: -5px; width: 16px; height: 16px; background: url(images/prompt_03.png) no-repeat;}
+
+.iconfont {
+   width: 48px; height: 48px;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}

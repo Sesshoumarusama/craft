@@ -14,7 +14,6 @@ import javax.sql.DataSource;
  *用于mybatis-spring的配置
  *
  */
-@Configuration
 @ImportResource("classpath:mybatis-spring.xml")
 public class MyBtaisConfig {
 
